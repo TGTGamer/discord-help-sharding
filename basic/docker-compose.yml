@@ -1,0 +1,11 @@
+version: '3.5'
+
+volumes:
+  pgdata:
+
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/app/config.json

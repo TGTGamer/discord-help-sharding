@@ -1,0 +1,10 @@
+version: '3.5'
+
+volumes:
+  pgdata:
+
+services:
+  bot:
+    environment:
+      NODE_ENV: development
+      TOKEN: ODQxODQ5NzA4NzI4Mjg3MjUz.YJsvow.TCewfIEnMp6W5EbEZxAi0zH6Thc

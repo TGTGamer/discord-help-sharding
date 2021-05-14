@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "typescript",
+      "tsconfig": "tsconfig.json",
+      "problemMatcher": ["$tsc"],
+      "group": "build",
+      "label": "tsc: build"
+    },
+    {
+      "type": "npm",
+      "script": "dev:build",
+      "problemMatcher": [],
+      "label": "npm: dev:build",
+      "detail": "gulp && tsc -p tsconfig.json && npm run prisma:migrate && npm run prisma:generate"
+    },
+    {
+      "type": "npm",
+      "script": "build-tools",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: build-tools",
+      "detail": "npm install --global --production --vs2015 --add-python-to-path windows-build-tools"
+    },
+    {
+      "type": "npm",
+      "script": "dev:format",
+      "problemMatcher": [],
+      "label": "npm: dev:format",
+      "group": "build",
+      "detail": "npm run dev:format-scripts"
+    },
+    {
+      "type": "npm",
+      "script": "dev:format-check",
+      "problemMatcher": [],
+      "label": "npm: dev:format-check",
+      "group": "build",
+      "detail": "prettier --config .prettier.json --check ."
+    },
+    {
+      "type": "npm",
+      "script": "dev:format-scripts",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: dev:format-scripts",
+      "detail": "prettier --config .prettier.json --write ."
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "group": "none",
+      "problemMatcher": [],
+      "label": "npm: install",
+      "detail": "install dependencies from package"
+    },
+    {
+      "type": "npm",
+      "script": "postinstall",
+      "group": "none",
+      "problemMatcher": [],
+      "label": "npm: postinstall",
+      "detail": "gulp && tsc -p tsconfig.json && npm run prisma:migrate && npm run prisma:generate"
+    },
+    {
+      "type": "npm",
+      "script": "prisma:generate",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: prisma:generate",
+      "detail": "prisma generate"
+    },
+    {
+      "type": "npm",
+      "script": "prisma:migrate",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: prisma:migrate",
+      "detail": "prisma migrate dev --name dev"
+    },
+    {
+      "type": "npm",
+      "script": "prisma:reset",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: prisma:reset",
+      "detail": "prisma migrate reset"
+    },
+    {
+      "type": "gulp",
+      "task": "default",
+      "problemMatcher": [],
+      "label": "gulp: default"
+    }
+  ]
+}

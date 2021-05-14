@@ -1,0 +1,15 @@
+.env
+*.log
+*.js.map
+packages/**/*.d.ts
+src/**/*.d.ts
+lib/*.js
+packages/**/*.js
+logs
+node_modules
+ecosystem.config.js
+index.md
+lib
+.dccache
+prisma/migrations
+packagetypes/

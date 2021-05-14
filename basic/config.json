@@ -1,0 +1,32 @@
+{
+  "radio": {
+    "name": "",
+    "site": "",
+    "player": "",
+    "streamLink": ["", ""],
+    "infoApi": "",
+    "description": "",
+    "logo": ""
+  },
+  "prefix": {
+    "prod": ["!"],
+    "staging": ["staging!"],
+    "dev": ["dev!"]
+  },
+  "developers": "",
+  "invite": "",
+  "guild": {
+    "discordid": "",
+    "link": "",
+    "prefix": ["!"],
+    "AdminRoles": {
+      "id": "",
+      "roleName": "",
+      "permission": ""
+    },
+    "Channels": {
+      "voiceID": ""
+    }
+  },
+  "botUserID": ""
+}

@@ -1,0 +1,10 @@
+version: '3.5'
+
+volumes:
+  pgdata:
+
+services:
+  bot:
+    environment:
+      NODE_ENV: production
+      TOKEN: 

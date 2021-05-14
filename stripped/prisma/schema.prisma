@@ -1,0 +1,75 @@
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///// Generators & Datasources
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator backend {
+  provider = "typegraphql-prisma"
+  // output   = "../graphql"
+}
+
+// generator frontend {
+//   provider = "typegraphql-prisma"
+//   output   = "../schema/graphql"
+// }
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///// Guild Models
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+model Guild {
+  id         String @id
+  invite     String?
+  language   String     @default("en-GB")
+  roles      AdminRoles? @relation(fields: [rolesID], references: [id])
+  rolesID    String?
+  channels   Channels?  @relation(fields: [channelsID], references: [id])
+  channelsID String?
+  user   User?  @relation(fields: [userID], references: [id])
+  userID String?
+  prefix     String[]
+  public     Boolean    @default(false)
+}
+
+model AdminRoles {
+  id         String      @id
+  roleName   String
+  Guild      Guild[]
+  permission Permissions @default(admin)
+}
+
+model Channels {
+  id        String  @id @default(cuid())
+  textID    String?
+  voiceID   String?
+  Connected Boolean?
+  AutoJoin  Boolean?
+  Guild     Guild[]
+  ignore    Boolean? @default(false)
+}
+
+model User {
+  id String @id
+  Guild Guild[]
+  permission Permissions @default(public)
+  forumLink String?
+  avatarUrl String?
+}
+
+enum Permissions {
+  internal
+  admin
+  public
+}

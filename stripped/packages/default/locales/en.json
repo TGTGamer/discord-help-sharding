@@ -1,0 +1,76 @@
+{
+  "manager": {
+    "events": "[MANAGER] {{this}}"
+  },
+  "client": {
+    "events": "[CLIENT] {{this}}"
+  },
+  "events": {
+    "commandCompleted": "Command Completed",
+    "botLoaded": {
+      "readyAt": "Ready at {{time}}",
+      "serving": "Shard is ready to serve in {{channels}} channels on {{servers}} servers, for a total of {{users}} users."
+    },
+    "commandUnknown": "Command Unknown {{this}}",
+    "loadModule": "Attempting to load {{type}} '{{name}}' of {{group}} module ({{path}})",
+    "loadPackage": "`{{group}} {{type}} folders are: {{files}}`"
+  },
+  "embeds": {
+    "footer": {
+      "1": "Are you multilingual? We're looking for translators",
+      "2": "The #1 international eSports gaming radio",
+      "3": "Dream in code? Why not work with us",
+      "4": "Find us on TuneIn to listen on the go",
+      "5": "Got a game server? Apply for partnership for exclusive features",
+      "6": "We are trying to improve, let us know how using `! feedback`"
+    }
+  },
+  "message": {
+    "recieved": {
+      "guild": "Message {{content}} from {{user}} in {{guild}} ({{guildid}})",
+      "user": "Message {{content}} from {{user}} in PM"
+    },
+    "unknown": {
+      "guild": "Command {{content}} was called by {{user}} in {{guild}} ({{guildid}}) but did not exist",
+      "user": "Command {{content}} was called by {{user}}but did not exist"
+    },
+    "error": "Command {{command}} exited with error: {{error}}"
+  },
+  "ping": {
+    "prompts": {
+      "respond": {
+        "title": "**Pong that Ping**",
+        "description": "**Pong**: {{time}}ms \n**Discord API Latency**: {{api}}ms \n**Radio API Latency**: {{ggapi}}ms \n**Message Created**: {{created}} \n**Recieved**: {{recieved}} \n**Completed**: {{completed}} \n**Processing Time**: {{process}}ms \n**Shard ID**: {{shard}} \n**Total Shards**: {{shards}}"
+      }
+    }
+  },
+  "commands": {
+    "prompts": {
+      "cooldown": {
+        "title": "**Hit the breaks**",
+        "description": "Woah there, looks like {{command}} is on cooldown, you need to wait {{time}} second(s)"
+      },
+      "dms": {
+        "title": "**Not my privates**",
+        "description": "I can't do that command inside my direct messages. Please try again within a server."
+      },
+      "doesntExist": {
+        "title": "**Command '{{command}}' doesn't exist**"
+      },
+      "args": {
+        "title": "**Forgot Somethhing?!**",
+        "description": "You have forgotten to provide enough arguments",
+        "fields": {
+          "usage": {
+            "title": "**{{name}} Usage**",
+            "content": "{{prefix}} {{command}} {{usage}}"
+          }
+        }
+      },
+      "commands": {
+        "title": "**_Command list_**",
+        "description": "You can use `! commands {command}` to view detailed information about each command. \n\n For non command related support please use `! help`"
+      }
+    }
+  }
+}
